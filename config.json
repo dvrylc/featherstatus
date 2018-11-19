@@ -1,0 +1,22 @@
+{
+  "targets": [
+    {
+      "location": "https://facebook.com",
+      "label": "Facebook",
+      "slug": "facebook",
+      "interval": 0.5
+    },
+    {
+      "location": "http://g00gle.com/",
+      "label": "Bad Site",
+      "slug": "badsite",
+      "interval": 0.5
+    },
+    {
+      "location": "https://twitter.com",
+      "label": "Twitter",
+      "slug": "twitter",
+      "interval": 0.5
+    }
+  ]
+}

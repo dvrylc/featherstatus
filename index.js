@@ -1,19 +1,16 @@
-// Load targets
-const config = require('./config.json');
-const targets = config.targets;
-
 // Constants
-let db, intervalIDs;
+const db = require('./db');
+const fetch = require ('./src/fetch');
 
 // Init
 (async () => {
-  db = await require('./db')(targets);
-  intervalIDs = await require('./src/fetch')(db, targets);
+  await db.init();
+  await fetch.init();
 })();
 
 // Shutdown
 async function shutdown(signal) {
-  await intervalIDs.forEach(id => { clearInterval(id); });
+  await fetch.clear();
   await db.close();
 
   process.exit(0);
